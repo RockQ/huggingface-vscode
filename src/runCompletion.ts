@@ -35,12 +35,13 @@ export default async function runCompletion(
     endToken: string;
     stopToken: string;
     temperature: number;
+    defaultApiToken: string
   };
-  const config: Config = workspace.getConfiguration("HuggingFaceCode") as Config;
-  const { modelIdOrEndpoint, stopToken, temperature } = config;
+  const config: Config = workspace.getConfiguration("CommonCodeX") as Config;
+  const { modelIdOrEndpoint, stopToken, temperature, defaultApiToken} = config;
 
   const context = getTabnineExtensionContext();
-  const apiToken = await context?.secrets.get("apiToken");
+  const apiToken = (await context?.secrets.get("apiToken")) || defaultApiToken;
 
   let endpoint = ""
   try{
@@ -56,7 +57,7 @@ export default async function runCompletion(
         "Get your token"
       ).then(clicked => {
         if (clicked) {
-          void env.openExternal(Uri.parse("https://github.com/huggingface/huggingface-vscode#hf-api-token"));
+          void env.openExternal(Uri.parse("https://github.com/RockQ/huggingface-vscode#hf-api-token"));
         }
       });
     }

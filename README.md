@@ -14,16 +14,16 @@ By default, this extension is using [bigcode/starcoder](https://huggingface.co/b
 
 You can supply your HF API token ([hf.co/settings/token](https://hf.co/settings/token)) with this command:
 1. `Cmd/Ctrl+Shift+P` to open VSCode command palette
-2. Type: `Hugging Face Code: Set API token`
+2. Type: `Common CodeX: Set API token`
 
-<img src="https://github.com/huggingface/huggingface-vscode/raw/master/assets/set-api-token.png" width="800px">
+<img src="https://github.com/RockQ/huggingface-vscode/raw/master/assets/set-api-token.png" width="800px">
 
 ## Testing
 
 1. Create a new python file
 2. Try typing `def main():`
 
-<img src="https://github.com/huggingface/huggingface-vscode/raw/master/assets/ext-working.png" width="800px">
+<img src="https://github.com/RockQ/huggingface-vscode/raw/master/assets/ext-working.png" width="800px">
 
 #### Checking if the generated code is in [The Stack](https://huggingface.co/datasets/bigcode/the-stack)
 
@@ -36,7 +36,7 @@ This means false positives are possible and long enough surrounding context is n
 
 ## Developing
 Make sure you've [installed yarn](https://yarnpkg.com/getting-started/install) on your system.
-1. Clone this repo: `git clone https://github.com/huggingface/huggingface-vscode`
+1. Clone this repo: `git clone https://github.com/RockQ/huggingface-vscode`
 2. Install deps: `cd huggingface-vscode && yarn install --frozen-lockfile`
 3. In vscode, open `Run and Debug` side bar & click `Launch Extension`
 
@@ -45,15 +45,15 @@ Make sure you've [installed yarn](https://yarnpkg.com/getting-started/install) o
 You can see input to & output from the code generation API:
 
 1. Open VSCode `OUTPUT` panel
-2. Choose `Hugging Face Code`
+2. Choose `Common CodeX`
 
-<img src="https://github.com/huggingface/huggingface-vscode/raw/master/assets/ext-output.png" width="800px">
+<img src="https://github.com/RockQ/huggingface-vscode/raw/master/assets/ext-output.png" width="800px">
 
 ## Configuring
 
 You can configure: endpoint to where request will be sent and special tokens.
 
-<img src="https://github.com/huggingface/huggingface-vscode/raw/master/assets/set-configs.png" width="800px">
+<img src="https://github.com/RockQ/huggingface-vscode/raw/master/assets/set-configs.png" width="800px">
 
 Example:
 

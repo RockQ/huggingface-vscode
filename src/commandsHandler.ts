@@ -2,7 +2,7 @@ import { window, commands, ExtensionContext } from "vscode";
 import { TABNINE_HOME_FOCUS_COMMAND } from "./globals/consts";
 import { getTabnineExtensionContext } from "./globals/tabnineExtensionContext";
 
-export const SET_API_TOKEN_COMMAND = "HuggingFaceCode::setApiToken";
+export const SET_API_TOKEN_COMMAND = "CommonCodeX::setApiToken";
 export const STATUS_BAR_COMMAND = "TabNine.statusBar";
 
 export function registerCommands(
@@ -30,6 +30,6 @@ async function setApiToken () {
   });
   if (input !== undefined) {
     await context?.secrets.store('apiToken', input);
-    window.showInformationMessage(`Hugging Face Code: API Token was successfully saved`);
+    window.showInformationMessage(`Common CodeX: API Token was successfully saved`);
   }
 };

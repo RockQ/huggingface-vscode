@@ -1,21 +1,21 @@
 {
-  "publisher": "HuggingFace",
-  "name": "huggingface-vscode",
-  "version": "0.0.25",
-  "displayName": "HF Code Autocomplete",
+  "publisher": "Ruanqi",
+  "name": "commoncodex",
+  "version": "0.0.27",
+  "displayName": "Common CodeX",
   "description": "AI Autocomplete for OSS code-gen models",
   "icon": "small_logo.png",
   "author": "Mishig Davaadorj <mishig@hf.co> (https://hf.co/)",
-  "license": "License at https://github.com/huggingface/huggingface-vscode",
+  "license": "License at https://github.com/RockQ/huggingface-vscode",
   "galleryBanner": {
     "color": "#100f11",
     "theme": "dark"
   },
   "badges": [
     {
-      "url": "https://img.shields.io/github/stars/huggingface/huggingface-vscode?style=social",
+      "url": "https://img.shields.io/github/stars/RockQ/huggingface-vscode?style=social",
       "description": "Star huggingface-vscode on Github",
-      "href": "https://github.com/huggingface/huggingface-vscode"
+      "href": "https://github.com/RockQ/huggingface-vscode"
     },
     {
       "url": "https://img.shields.io/twitter/follow/huggingface?style=social",
@@ -26,10 +26,10 @@
   "homepage": "https://hf.co",
   "repository": {
     "type": "git",
-    "url": "https://github.com/huggingface/huggingface-vscode"
+    "url": "https://github.com/RockQ/huggingface-vscode"
   },
   "bugs": {
-    "url": "https://github.com/huggingface/huggingface-vscode/issues",
+    "url": "https://github.com/RockQ/huggingface-vscode/issues",
     "email": "mishig@hf.co"
   },
   "engines": {
@@ -175,19 +175,19 @@
   "contributes": {
     "commands": [
       {
-        "command": "HuggingFaceCode::setApiToken",
-        "title": "Hugging Face Code: Set API token"
+        "command": "CommonCodeX::setApiToken",
+        "title": "Common CodeX: Set API token"
       },
       {
         "command": "tabnine.attribution",
-        "title": "Hugging Face Code: Show Code Attribution"
+        "title": "Common CodeX: Show Code Attribution"
       }
     ],
     "viewsContainers": {
       "activitybar": [
         {
           "id": "tabnine-access",
-          "title": "Hugging Face Code",
+          "title": "Common CodeX",
           "icon": "small_logo.png"
         }
       ]
@@ -203,44 +203,49 @@
     },
     "configuration": [
       {
-        "title": "Hugging Face Code",
+        "title": "Common CodeX",
         "properties": {
-          "HuggingFaceCode.modelIdOrEndpoint": {
+          "CommonCodeX.defaultApiToken": {
+            "type": "string",
+            "default": "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",
+            "description": "Supply huggingface model apiToken (https://github.com/huggingface/huggingface-vscode#hf-api-token)."
+          },
+          "CommonCodeX.modelIdOrEndpoint": {
             "type": "string",
             "default": "bigcode/starcoder",
             "description": "Supply huggingface model id (ex: `bigcode/starcoder`) or custom endpoint (ex: https://bigcode-large-xl.eu.ngrok.io/generate) to which request will be sent to. When huggingface model id is supplied, hugging face API inference will be used."
           },
-          "HuggingFaceCode.isFillMode": {
+          "CommonCodeX.isFillMode": {
             "type": "boolean",
             "default": true,
             "description": "Whether to send to inference server: codes that are on top of cursor only (isFillMode=false) OR codes that are both above & below the cursor (isFillMode=true)"
           },
-          "HuggingFaceCode.startToken": {
+          "CommonCodeX.startToken": {
             "type": "string",
             "default": "<fim_prefix>",
             "description": "String that is sent to server is in format: {startToken}{code above cursor}{middleToken}{code below cursor if isFillMode=true}{endToken}. Leave startToken, middleToken, or endToken empty if there is no special token for those placements."
           },
-          "HuggingFaceCode.middleToken": {
+          "CommonCodeX.middleToken": {
             "type": "string",
             "default": "<fim_middle>",
             "description": "String that is sent to server is in format: {startToken}{code above cursor}{middleToken}{code below cursor if isFillMode=true}{endToken}. Leave startToken, middleToken, or endToken empty if there is no special token for those placements."
           },
-          "HuggingFaceCode.endToken": {
+          "CommonCodeX.endToken": {
             "type": "string",
             "default": "<fim_suffix>",
             "description": "String that is sent to server is in format: {startToken}{code above cursor}{middleToken}{code below cursor if isFillMode=true}{endToken}. Leave startToken, middleToken, or endToken empty if there is no special token for those placements."
           },
-          "HuggingFaceCode.temperature": {
+          "CommonCodeX.temperature": {
             "type": "float",
             "default": 0.2,
             "description": "Sampling temperature"
           },
-          "HuggingFaceCode.stopToken": {
+          "CommonCodeX.stopToken": {
             "type": "string",
             "default": "<|endoftext|>",
             "description": "(Optional) Stop token"
           },
-          "HuggingFaceCode.attributionWindowSize": {
+          "CommonCodeX.attributionWindowSize": {
             "type": "integer",
             "default": 250,
             "description": "Number of characters to scan for code attribution"
@@ -303,7 +308,7 @@
   "__metadata": {
     "id": "75da638c-c45a-44ea-aa3b-8570a3559810",
     "publisherDisplayName": "TabNine",
-    "publisherId": "1924b661-7c19-45d9-9800-edeb32848fd7",
+    "publisherId": "Ruanqi",
     "isPreReleaseVersion": false
   }
 }

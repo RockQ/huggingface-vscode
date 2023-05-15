@@ -17,7 +17,7 @@ export default async function highlightStackAttributions(): Promise<void> {
   type Config = WorkspaceConfiguration & {
     attributionWindowSize: number;
   };
-  const config: Config = workspace.getConfiguration("HuggingFaceCode") as Config;
+  const config: Config = workspace.getConfiguration("CommonCodeX") as Config;
   const { attributionWindowSize } = config;
 
   // get cursor postion and offset

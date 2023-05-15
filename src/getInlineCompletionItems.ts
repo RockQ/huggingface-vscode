@@ -6,6 +6,7 @@ import { SuggestionTrigger } from "./globals/consts";
 import { AutocompleteResult, ResultEntry } from "./binary/requests/requests";
 import { isMultiline } from "./utils/utils";
 
+
 const INLINE_REQUEST_TIMEOUT = 3000;
 
 export default async function getInlineCompletionItems(
@@ -25,6 +26,7 @@ export default async function getInlineCompletionItems(
       new TabnineInlineCompletionItem(
         result.new_prefix,
         result,
+        
         calculateRange(position, response, result),
         getAutoImportCommand(
           result,
